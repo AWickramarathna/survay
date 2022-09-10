@@ -7,7 +7,7 @@
 
     <div class="mb-3" style="background-color: rgb(208, 208, 208); padding: 15px 25px; border-radius: 8px;">
         <h2 style="font-weight: bold;" th:text="'Scenario'+ ${scenario} +'/ 5'"></h2>
-        <h3>Please rank the following in order of your preference. (Rank 1 - Most Preferred, to Rank 3 - Least Preferred)</h3>
+        <h3>Please rank the following in order of your preference. (G - Good, M - Moderate, P - Poor)</h3>
     </div>
     <div class="row">
         <div class="col-md-4 mb-2">
@@ -19,24 +19,36 @@
                     <br/>
                     <table style="width:100%">
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Membership Fee (Rs) :</td>
-                            <td><b>1000</b></td>
+                            <td style="width: 225px;">Connectivity :</td>
+                            <td th:text="${optionA.connectivity}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Membership Fee Returned :</td>
-                            <td><b>No</b></td>
+                            <td style="width: 225px;">Automobile Interaction :</td>
+                            <td th:text="${optionA.automobile_interaction}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Variable Cost per Hour (Rs) :</td>
-                            <td><b>75 (Rs 1.25/min)</b></td>
+                            <td style="width: 225px;">Road signs :</td>
+                            <td th:text="${optionA.road_signs}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Distance to the station(m) :</td>
-                            <td><b>100</b></td>
+                            <td style="width: 225px;">Street Lighting :</td>
+                            <td th:text="${optionA.street_lightning}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Allow to take bike outside the university :</td>
-                            <td><b>Yes</b></td>
+                            <td style="width: 225px;">Secured Parking :</td>
+                            <td th:text="${optionA.secure_parking}"></td>
+                        </tr>
+                        <tr style="vertical-align:top; height: 50px !important;">
+                            <td style="width: 225px;">Rentability :</td>
+                            <td th:text="${optionA.rentability}"></td>
+                        </tr>
+                        <tr style="vertical-align:top; height: 50px !important;">
+                            <td style="width: 225px;">Cycle renting :</td>
+                            <td th:text="${optionA.cycle_renting}"></td>
+                        </tr>
+                        <tr style="vertical-align:top; height: 50px !important;">
+                            <td style="width: 225px;">Tour Guide :</td>
+                            <<td th:text="${optionA.tour_guide}"></td>
                         </tr>
                     </table>
                 </div>
@@ -51,44 +63,115 @@
                     <br/>
                     <table style="width:100%;">
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Membership Fee (Rs) :</td>
-                            <td><b>5000</b></td>
+                            <td style="width: 225px;">Connectivity :</td>
+                            <td th:text="${optionB.connectivity}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Membership Fee Returned :</td>
-                            <td><b>Yes</b></td>
+                            <td style="width: 225px;">Automobile Interaction :</td>
+                            <td th:text="${optionB.automobile_interaction}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Variable Cost per Hour (Rs) :</td>
-                            <td><b>30 (Rs 0.5/min)</b></td>
+                            <td style="width: 225px;">Road signs :</td>
+                            <td th:text="${optionB.road_signs}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Distance to the station(m) :</td>
-                            <td><b>200</b></td>
+                            <td style="width: 225px;">Street Lighting  :</td>
+                            <td th:text="${optionB.street_lightning}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Allow to take bike outside the university :</td>
-                            <td><b>Yes</b></td>
+                            <td style="width: 225px;">Secured Parking :</td>
+                            <td th:text="${optionB.secure_parking}"></td>
+                        </tr>
+                        <tr style="vertical-align:top; height: 50px !important;">
+                            <td style="width: 225px;">Rentability :</td>
+                            <td th:text="${optionB.rentability}"></td>
+                        </tr>
+                        <tr style="vertical-align:top; height: 50px !important;">
+                            <td style="width: 225px;">Cycle renting :</td>
+                            <td th:text="${optionB.cycle_renting}"></td>
+                        </tr>
+                        <tr style="vertical-align:top; height: 50px !important;">
+                            <td style="width: 225px;">Tour Guide:</td>
+                            <td th:text="${optionB.tour_guide}"></td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-3">
-            <div class="card bg-primary p-2 text-dark bg-opacity-25" style="background-color: rgb(232, 201, 248) !important;">
+            <div class="card bg-primary p-2 text-dark bg-opacity-25" style="background-color: rgb(177, 191, 255) !important;">
                 <div class="card-body">
-                    <center>
-                        <h5 class="card-title"><b>Option C</b></h5>
-                    </center>
-                    <br/>
-                    <table style="width:100%">
-                            <span style="vertical-align:top; height: 50px !important; text-align: center;">
-                                <h5 style="height: 242px;"><b>Not use Bike Sharing System</b></h5>
-                            </span>
-                    </table>
+
+                    <form id="myForm" action="/scenario" method="POST">
+
+                        <input type="hidden" name="is_finished" value="false">
+                        <input type="hidden" name="scenario" th:value="${scenario}">
+                        <input type="hidden" name="username" th:value="${username}">
+                        <input type="hidden" name="option" id="option" value="">
+<!--                        <input type="hidden" name="info" value="{&#34;scenario1&#34;:{&#34;scenario&#34;:1,&#34;card1&#34;:{&#34;membership_fees&#34;:&#34;1000&#34;,&#34;membership_fee_returned&#34;:&#34;No&#34;,&#34;variable_cost&#34;:&#34;75 (Rs 1.25/min)&#34;,&#34;station_location&#34;:&#34;100&#34;,&#34;outside_usage&#34;:&#34;Yes&#34;},&#34;card2&#34;:{&#34;membership_fees&#34;:&#34;5000&#34;,&#34;membership_fee_returned&#34;:&#34;Yes&#34;,&#34;variable_cost&#34;:&#34;30 (Rs 0.5/min)&#34;,&#34;station_location&#34;:&#34;200&#34;,&#34;outside_usage&#34;:&#34;Yes&#34;},&#34;card3&#34;:{&#34;content&#34;:&#34;Not use Bike Sharing System&#34;}},&#34;scenario2&#34;:{&#34;scenario&#34;:2,&#34;card1&#34;:{&#34;membership_fees&#34;:&#34;1000&#34;,&#34;membership_fee_returned&#34;:&#34;Yes&#34;,&#34;variable_cost&#34;:&#34;75 (Rs 1.25/min)&#34;,&#34;station_location&#34;:&#34;100&#34;,&#34;outside_usage&#34;:&#34;Yes&#34;},&#34;card2&#34;:{&#34;membership_fees&#34;:&#34;2000&#34;,&#34;membership_fee_returned&#34;:&#34;No&#34;,&#34;variable_cost&#34;:&#34;50 (Rs 0.8/min)&#34;,&#34;station_location&#34;:&#34;100&#34;,&#34;outside_usage&#34;:&#34;No&#34;},&#34;card3&#34;:{&#34;content&#34;:&#34;Not use Bike Sharing System&#34;}},&#34;scenario3&#34;:{&#34;scenario&#34;:3,&#34;card1&#34;:{&#34;membership_fees&#34;:&#34;2000&#34;,&#34;membership_fee_returned&#34;:&#34;No&#34;,&#34;variable_cost&#34;:&#34;75 (Rs 1.25/min)&#34;,&#34;station_location&#34;:&#34;200&#34;,&#34;outside_usage&#34;:&#34;No&#34;},&#34;card2&#34;:{&#34;membership_fees&#34;:&#34;3000&#34;,&#34;membership_fee_returned&#34;:&#34;Yes&#34;,&#34;variable_cost&#34;:&#34;30 (Rs 0.5/min)&#34;,&#34;station_location&#34;:&#34;50&#34;,&#34;outside_usage&#34;:&#34;No&#34;},&#34;card3&#34;:{&#34;content&#34;:&#34;Not use Bike Sharing System&#34;}},&#34;scenario4&#34;:{&#34;scenario&#34;:4,&#34;card1&#34;:{&#34;membership_fees&#34;:&#34;2000&#34;,&#34;membership_fee_returned&#34;:&#34;No&#34;,&#34;variable_cost&#34;:&#34;75 (Rs 1.25/min)&#34;,&#34;station_location&#34;:&#34;50&#34;,&#34;outside_usage&#34;:&#34;Yes&#34;},&#34;card2&#34;:{&#34;membership_fees&#34;:&#34;5000&#34;,&#34;membership_fee_returned&#34;:&#34;No&#34;,&#34;variable_cost&#34;:&#34;75 (Rs 1.25/min)&#34;,&#34;station_location&#34;:&#34;200&#34;,&#34;outside_usage&#34;:&#34;No&#34;},&#34;card3&#34;:{&#34;content&#34;:&#34;Not use Bike Sharing System&#34;}},&#34;scenario5&#34;:{&#34;scenario&#34;:5,&#34;card1&#34;:{&#34;membership_fees&#34;:&#34;2000&#34;,&#34;membership_fee_returned&#34;:&#34;Yes&#34;,&#34;variable_cost&#34;:&#34;75 (Rs 1.25/min)&#34;,&#34;station_location&#34;:&#34;100&#34;,&#34;outside_usage&#34;:&#34;No&#34;},&#34;card2&#34;:{&#34;membership_fees&#34;:&#34;2000&#34;,&#34;membership_fee_returned&#34;:&#34;No&#34;,&#34;variable_cost&#34;:&#34;50 (Rs 0.8/min)&#34;,&#34;station_location&#34;:&#34;50&#34;,&#34;outside_usage&#34;:&#34;Yes&#34;},&#34;card3&#34;:{&#34;content&#34;:&#34;Not use Bike Sharing System&#34;}}}">-->
+<!--                        <input type="hidden" name="choices" data-value="" value="" id="choices">-->
+                        <div class="mt-5 mb-4">
+                            <!--                    <label class="col-md-6" for="choice1" style="font-weight: bold; font-size: large;">Select your 1<sup>st</sup> Preference :</label>-->
+                            <select class="col-md-5" name="choice1" id="choice1" style="border-radius: 5px; border: 2px solid blueviolet; background-color: rgb(255, 209, 255); padding: 5px;" required>
+                                <option value="">Select 1st Preference Here</option>
+                                <option value="A">Option A</option>
+                                <option value="B">Option B</option>
+                            </select>
+                        </div>
+                        <div class="mt-4 mb-4">
+                            <!--                    <label class="col-md-6" for="choice2" style="font-weight: bold; font-size: large;">Select your 2<sup>nd</sup> Preference :</label>-->
+                            <select class="col-md-5" name="choice2" id="choice2" style="border-radius: 5px; border: 2px solid blueviolet; background-color: rgb(255, 209, 255); padding: 5px;" required>
+                                <option value="">Select 2nd Preference Here</option>
+                                <option value="A">Option A</option>
+                                <option value="B">Option B</option>
+                            </select>
+                        </div>
+                        <button id="submitBtn" class="btn btn-primary" type="submit" style="background-color: blueviolet !important; border-color: darkslateblue !important; width: 100%;">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <div th:include="submitForm.html"></div>
+
 </div>
+<script>
+    $(document).ready(function(e) {
+
+
+
+        let $select1 = $('#choice1'),
+            $select2 = $('#choice2'),
+            $select3 = $('#choice3'),
+            $options2 = $select2.find('option');
+        $options3 = $select3.find('option');
+
+        var val1 = '';
+        var val2 = '';
+
+        $select1.on('change', function() {
+            val1 = this.value;
+            $select2.html($options2.filter(function() {
+                return this.value != val1 || this.value == '';
+            }));
+            $select2.trigger('change');
+            // var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
+            $('#option').val(val1);
+        }).trigger('change');
+
+        $select2.on('change', function() {
+            val2 = this.value;
+
+            $select3.html($options3.filter(function() {
+                return ((this.value != val1) && (this.value != val2)) || this.value == '';
+            }));
+            $select3.trigger('change');
+            // var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
+            // $('#choices').val(choices);
+        }).trigger('change');
+
+        // $select3.on('change', function() {
+        //     var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
+        //     $('#choices').val(choices);
+        // });
+    });
+</script>

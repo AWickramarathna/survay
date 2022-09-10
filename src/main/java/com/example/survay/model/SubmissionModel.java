@@ -15,9 +15,10 @@ import java.util.List;
 @Builder
 public class SubmissionModel {
 
-    private String choices;
-    private String choiceList = "";
-    private String scenario;
+    private String username;
+    private String option ;
+    private Integer scenario ;
+
 
 
 }
