@@ -56,7 +56,7 @@ class WelcomeController {
     public String submitPreferences(@ModelAttribute SubmissionModel submissionModel, Model model){
 
         Attributes attributes = attributeRepository.findByUsernameAndOptionAndScenario(submissionModel.getUsername(),submissionModel.getOption(),String.valueOf(submissionModel.getScenario()));
-        attributes.setSelectedOption(submissionModel.getOption());
+        attributes.setSelectedOption(submissionModel.getChoice1());
         attributeRepository.save(attributes);
         Attributes optionA = getOption1();
         Attributes optionB = getOption2();
@@ -75,6 +75,7 @@ class WelcomeController {
 
 
         if(submissionModel.getScenario()==5){
+            model.addAttribute("username",attributes.getUsername());
             return "infor";
         }else{
             return "welcome";

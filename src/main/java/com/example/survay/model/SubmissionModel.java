@@ -16,6 +16,8 @@ import java.util.List;
 public class SubmissionModel {
 
     private String username;
+    private String choice1 ;
+    private String choice2 ;
     private String option ;
     private Integer scenario ;
 

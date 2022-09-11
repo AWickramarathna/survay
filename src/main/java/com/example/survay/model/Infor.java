@@ -11,7 +11,14 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Infor {
     private String gender;
-    private String status;
-    private String faculty;
+    private String nationalty;
+    private String province;
+    private String region;
+    private String age;
+    private String job;
+    private String visits;
+    private String stay;
+    private String exp;
+    private String username;
     private String income;
 }

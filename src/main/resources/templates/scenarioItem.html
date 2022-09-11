@@ -1,17 +1,18 @@
 <div class="container mt-3" style="margin-bottom: 60px;">
     <br/>
     <br/>
-    <div class="mb-3" style="background-color: rgb(177, 191, 255); padding: 15px 25px; border-radius: 8px; text-align: center;">
-        <h1 style="font-weight: bold;">Stated Preference Survey for a study of a Bike Sharing System for University of Moratuwa</h1>
+    <div class="mb-3" style="background-color: rgb(204, 153, 0);	 padding: 15px 25px; border-radius: 8px; text-align: center;">
+        <h1 style="font-weight: bold;">THE EVALUATION OF FACTORS INFLUENCING BICYCLE TRIPS IN A HERITAGE CITY (A CASE STUDY ON CYCLING TOURIST IN ANURADHAPURA ANCIENT CITY)</h1>
+        <img src="/img/Logo.png" alt="" style="display: block; margin: auto; max-width: 10%;">
     </div>
 
-    <div class="mb-3" style="background-color: rgb(208, 208, 208); padding: 15px 25px; border-radius: 8px;">
-        <h2 style="font-weight: bold;" th:text="'Scenario'+ ${scenario} +'/ 5'"></h2>
-        <h3>Please rank the following in order of your preference. (G - Good, M - Moderate, P - Poor)</h3>
-    </div>
+<!--    <div class="mb-3" style="background-color: rgb(208, 208, 208); padding: 15px 25px; border-radius: 8px;">-->
+<!--        <h2 style="font-weight: bold;" th:text="'Scenario'+ ${scenario} +'/ 5'"></h2>-->
+<!--        <h3>Please rank the following in order of your preference. (G - Good, M - Moderate, P - Poor)</h3>-->
+<!--    </div>-->
     <div class="row">
         <div class="col-md-4 mb-3">
-            <div class="card bg-primary p-2 text-dark bg-opacity-25" style="background-color: rgb(232, 201, 248) !important;">
+            <div class="card bg-primary p-2 text-dark bg-opacity-25" style="background-color: rgb(255, 191, 0) !important;">
                 <div class="card-body">
                     <center>
                         <h5 class="card-title"><b>Option A</b></h5>
@@ -55,7 +56,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-3">
-            <div class="card bg-primary p-2 text-dark bg-opacity-25" style="background-color: rgb(232, 201, 248) !important;">
+            <div class="card bg-primary p-2 text-dark bg-opacity-25" style="background-color: rgb(255, 191, 0) !important;">
                 <div class="card-body">
                     <center>
                         <h5 class="card-title"><b>Option B</b></h5>
@@ -99,7 +100,7 @@
             </div>
         </div>
         <div class="col-md-4 mb-3">
-            <div class="card bg-primary p-2 text-dark bg-opacity-25" style="background-color: rgb(177, 191, 255) !important;">
+            <div class="card bg-primary p-2 text-dark bg-opacity-25" style="background-color: rgb(255, 191, 0) !important;">
                 <div class="card-body">
 
                     <form id="myForm" action="/scenario" method="POST">
@@ -112,7 +113,7 @@
 <!--                        <input type="hidden" name="choices" data-value="" value="" id="choices">-->
                         <div class="mt-5 mb-4">
                             <!--                    <label class="col-md-6" for="choice1" style="font-weight: bold; font-size: large;">Select your 1<sup>st</sup> Preference :</label>-->
-                            <select class="col-md-5" name="choice1" id="choice1" style="border-radius: 5px; border: 2px solid blueviolet; background-color: rgb(255, 209, 255); padding: 5px;" required>
+                            <select class="col-md-5" name="choice1" id="choice1" style="border-radius: 5px; border: 2px solid blueviolet; background-color: rgb(177, 191, 255); padding: 5px;" required>
                                 <option value="">Select 1st Preference Here</option>
                                 <option value="A">Option A</option>
                                 <option value="B">Option B</option>
@@ -120,8 +121,8 @@
                         </div>
                         <div class="mt-4 mb-4">
                             <!--                    <label class="col-md-6" for="choice2" style="font-weight: bold; font-size: large;">Select your 2<sup>nd</sup> Preference :</label>-->
-                            <select class="col-md-5" name="choice2" id="choice2" style="border-radius: 5px; border: 2px solid blueviolet; background-color: rgb(255, 209, 255); padding: 5px;" required>
-                                <option value="">Select 2nd Preference Here</option>
+                            <select class="col-md-5" name="choice2" id="choice2" style="border-radius: 5px; border: 2px solid blueviolet; background-color: rgb(177, 191, 255); padding: 5px;" required>
+                                <option value="1">Select 2nd Preference Here</option>
                                 <option value="A">Option A</option>
                                 <option value="B">Option B</option>
                             </select>
@@ -138,40 +139,42 @@
     $(document).ready(function(e) {
 
 
-
-        // let $select1 = $('#choice1'),
-        //     $select2 = $('#choice2'),
-        //     $select3 = $('#choice3'),
-        //     $options2 = $select2.find('option');
+        let $select1 = $('#choice1'),
+            $select2 = $('#choice2'),
+            //     $select3 = $('#choice3'),
+            $options2 = $select2.find('option');
         // $options3 = $select3.find('option');
         //
-        // var val1 = '';
+        var val1 = '';
         // var val2 = '';
         //
-        // $select1.on('change', function() {
-        //     val1 = this.value;
-        //     $select2.html($options2.filter(function() {
-        //         return this.value != val1 || this.value == '';
-        //     }));
-        //     $select2.trigger('change');
-        //     // var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
-        //     $('#option').val(val1);
-        // }).trigger('change');
-        //
-        // $select2.on('change', function() {
-        //     val2 = this.value;
-        //
-        //     $select3.html($options3.filter(function() {
-        //         return ((this.value != val1) && (this.value != val2)) || this.value == '';
-        //     }));
-        //     $select3.trigger('change');
-        //     // var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
-        //     // $('#choices').val(choices);
-        // }).trigger('change');
+        $select1.on('change', function () {
+            val1 = this.value;
+            $select2.html($options2.filter(function () {
+                return this.value != val1 || this.value == '';
+            }));
+            $select2.trigger('change');
+            var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
+            $('#option').val(val1);
+            $('#choices').val(choices)
+        }).trigger('change');
 
-        // $select3.on('change', function() {
-        //     var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
-        //     $('#choices').val(choices);
-        // });
-    });
+        $select2.on('change', function () {
+            val2 = this.value;
+
+            // $select3.html($options3.filter(function() {
+            //     return ((this.value != val1) && (this.value != val2)) || this.value == '';
+            // }));
+            // $select3.trigger('change');
+            // var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
+            // $('#choices').val(choices);
+            // }).trigger('change');
+
+            // $select3.on('change', function() {
+            //     var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
+            //     $('#choices').val(choices);
+            // });
+
+        });
+    })
 </script>
