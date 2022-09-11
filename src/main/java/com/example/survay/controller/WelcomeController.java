@@ -84,20 +84,22 @@ class WelcomeController {
 
     private Attributes getOption1() {
         java.util.Random rand = new java.util.Random();
-        java.util.List<String> values = java.util.Arrays.asList("G","M","P");
-        java.util.List<String> options = new java.util.ArrayList<>();
-        for(int i=0;i<8;i++ ){
-            options.add(values.get(rand.nextInt(10000)%3));
-        }
+        java.util.List<String> gmp = java.util.Arrays.asList("Good","Moderate","Poor");
+        java.util.List<String> lmh = java.util.Arrays.asList("Low","Moderate","High");
+        java.util.List<String> hl = java.util.Arrays.asList("Low","High");
+        java.util.List<String> yn = java.util.Arrays.asList("Yes","No");
+        java.util.List<String> fee = java.util.Arrays.asList("Rs 500","Rs 1000","Rs 1500","Rs 2000");
+
+
         return Attributes.builder()
-                .connectivity(options.get(0))
-                .automobile_interaction(options.get(1))
-                .cycle_renting(options.get(2))
-                .Rentability(options.get(3))
-                .road_signs(options.get(4))
-                .secure_parking(options.get(5))
-                .street_lightning(options.get(6))
-                .tour_guide(options.get(7))
+                .connectivity(gmp.get(rand.nextInt(10000)%3))
+                .automobile_interaction(lmh.get(rand.nextInt(10000)%3))
+                .cycle_renting(fee.get(rand.nextInt(10000)%4))
+                .Rentability(hl.get(rand.nextInt(10000)%2))
+                .road_signs(lmh.get(rand.nextInt(10000)%3))
+                .secure_parking(yn.get(rand.nextInt(10000)%2))
+                .street_lightning(yn.get(rand.nextInt(10000)%2))
+                .tour_guide(yn.get(rand.nextInt(10000)%2))
                 .username(String.valueOf(System.currentTimeMillis()))
                 .option("A")
                 .build();
@@ -108,21 +110,20 @@ class WelcomeController {
 
 
         java.util.Random rand = new java.util.Random();
-        java.util.List<String> values = java.util.Arrays.asList("M","P","G");
-        java.util.List<String> options = new java.util.ArrayList<>();
-        for(int i=0;i<8;i++ ){
-            options.add(values.get(rand.nextInt(1000000)%3));
-        }
+        java.util.List<String> gmp = java.util.Arrays.asList("Poor","Good","Moderate");
+        java.util.List<String> lmh = java.util.Arrays.asList("High","Low","Moderate");
+        java.util.List<String> hl = java.util.Arrays.asList("High","Low");
+        java.util.List<String> yn = java.util.Arrays.asList("No","Yes");
+        java.util.List<String> fee = java.util.Arrays.asList("Rs 2000","Rs 1000","Rs 500","Rs 1500");
         return Attributes.builder()
-                .connectivity(options.get(0))
-                .automobile_interaction(options.get(1))
-                .cycle_renting(options.get(2))
-                .Rentability(options.get(3))
-                .road_signs(options.get(4))
-                .secure_parking(options.get(5))
-                .street_lightning(options.get(6))
-                .tour_guide(options.get(7))
-                //.username(String.valueOf(System.currentTimeMillis()))
+                .connectivity(gmp.get(rand.nextInt(10000)%3))
+                .automobile_interaction(lmh.get(rand.nextInt(10000)%3))
+                .cycle_renting(fee.get(rand.nextInt(10000)%4))
+                .Rentability(hl.get(rand.nextInt(10000)%2))
+                .road_signs(lmh.get(rand.nextInt(10000)%3))
+                .secure_parking(yn.get(rand.nextInt(10000)%2))
+                .street_lightning(yn.get(rand.nextInt(10000)%2))
+                .tour_guide(yn.get(rand.nextInt(10000)%2))
                 .option("B")
                 .build();
     }

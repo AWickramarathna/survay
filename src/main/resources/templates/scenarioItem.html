@@ -10,14 +10,14 @@
         <h3>Please rank the following in order of your preference. (G - Good, M - Moderate, P - Poor)</h3>
     </div>
     <div class="row">
-        <div class="col-md-4 mb-2">
-            <div class="card bg-primary mb-2 p-2 text-dark bg-opacity-25" style="background-color: rgb(232, 201, 248) !important;">
+        <div class="col-md-4 mb-3">
+            <div class="card bg-primary p-2 text-dark bg-opacity-25" style="background-color: rgb(232, 201, 248) !important;">
                 <div class="card-body">
                     <center>
                         <h5 class="card-title"><b>Option A</b></h5>
                     </center>
                     <br/>
-                    <table style="width:100%">
+                    <table style="width:100%;">
                         <tr style="vertical-align:top; height: 50px !important;">
                             <td style="width: 225px;">Connectivity :</td>
                             <td th:text="${optionA.connectivity}"></td>
@@ -31,7 +31,7 @@
                             <td th:text="${optionA.road_signs}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Street Lighting :</td>
+                            <td style="width: 225px;">Street Lighting  :</td>
                             <td th:text="${optionA.street_lightning}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
@@ -47,8 +47,8 @@
                             <td th:text="${optionA.cycle_renting}"></td>
                         </tr>
                         <tr style="vertical-align:top; height: 50px !important;">
-                            <td style="width: 225px;">Tour Guide :</td>
-                            <<td th:text="${optionA.tour_guide}"></td>
+                            <td style="width: 225px;">Tour Guide:</td>
+                            <td th:text="${optionA.tour_guide}"></td>
                         </tr>
                     </table>
                 </div>
@@ -139,35 +139,35 @@
 
 
 
-        let $select1 = $('#choice1'),
-            $select2 = $('#choice2'),
-            $select3 = $('#choice3'),
-            $options2 = $select2.find('option');
-        $options3 = $select3.find('option');
-
-        var val1 = '';
-        var val2 = '';
-
-        $select1.on('change', function() {
-            val1 = this.value;
-            $select2.html($options2.filter(function() {
-                return this.value != val1 || this.value == '';
-            }));
-            $select2.trigger('change');
-            // var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
-            $('#option').val(val1);
-        }).trigger('change');
-
-        $select2.on('change', function() {
-            val2 = this.value;
-
-            $select3.html($options3.filter(function() {
-                return ((this.value != val1) && (this.value != val2)) || this.value == '';
-            }));
-            $select3.trigger('change');
-            // var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
-            // $('#choices').val(choices);
-        }).trigger('change');
+        // let $select1 = $('#choice1'),
+        //     $select2 = $('#choice2'),
+        //     $select3 = $('#choice3'),
+        //     $options2 = $select2.find('option');
+        // $options3 = $select3.find('option');
+        //
+        // var val1 = '';
+        // var val2 = '';
+        //
+        // $select1.on('change', function() {
+        //     val1 = this.value;
+        //     $select2.html($options2.filter(function() {
+        //         return this.value != val1 || this.value == '';
+        //     }));
+        //     $select2.trigger('change');
+        //     // var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
+        //     $('#option').val(val1);
+        // }).trigger('change');
+        //
+        // $select2.on('change', function() {
+        //     val2 = this.value;
+        //
+        //     $select3.html($options3.filter(function() {
+        //         return ((this.value != val1) && (this.value != val2)) || this.value == '';
+        //     }));
+        //     $select3.trigger('change');
+        //     // var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
+        //     // $('#choices').val(choices);
+        // }).trigger('change');
 
         // $select3.on('change', function() {
         //     var choices = $('#choices').attr('data-value') + '[' + $('#choice1').val() + ',' + $('#choice2').val() + ',' + $('#choice3').val() + ']' + ';';
