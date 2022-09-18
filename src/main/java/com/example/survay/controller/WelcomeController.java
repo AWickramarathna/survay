@@ -20,6 +20,9 @@ class WelcomeController {
     @org.springframework.beans.factory.annotation.Autowired
     private com.example.survay.repository.AttributeRepository attributeRepository;
 
+    @org.springframework.beans.factory.annotation.Autowired
+    private com.example.survay.repository.InforRepository inforRepository;
+
 
     @GetMapping("/")
     public String main(Model model) {
@@ -28,6 +31,7 @@ class WelcomeController {
 
     @PostMapping ("/infor")
     public String collectInfor(@ModelAttribute Infor infor,Model model) {
+       inforRepository.save(infor);
         return "success";
     }
 
