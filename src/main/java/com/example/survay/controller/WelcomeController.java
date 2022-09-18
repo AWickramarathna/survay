@@ -3,11 +3,15 @@ package com.example.survay.controller;
 import com.example.survay.model.Infor;
 import com.example.survay.model.SubmissionModel;
 import com.example.survay.Attributes;
+import java.util.List;
+
+import com.example.survay.repository.AttributeRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -29,9 +33,22 @@ class WelcomeController {
         return "description"; //view
     }
 
+    @GetMapping("/viewUser")
+    public String viewUserPage( Model model) {
+        model.addAttribute("allemplist", inforRepository.findAll());
+        return "viewUser";
+    }
+
+    @GetMapping("/viewResponse/{username}")
+    public String viewHomePage(@PathVariable(value = "username") String username, Model model) {
+        model.addAttribute("allemplist", attributeRepository.findAllByUsername(username));
+        return "viewAttribute";
+    }
+
     @PostMapping ("/infor")
     public String collectInfor(@ModelAttribute Infor infor,Model model) {
        inforRepository.save(infor);
+        model.addAttribute("allemplist", inforRepository.findAll());
         return "success";
     }
 
